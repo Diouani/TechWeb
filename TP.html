@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Aventures - Voyages Authentiques au Maroc</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-carousel {
+            height: 400px;
+            background: linear-gradient(135deg, #d4af37 0%, #8b4513 100%);
+        }
+        
+        .carousel-item {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease;
+            height: 350px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card .card-img-top {
+            height: 150px;
+            background: linear-gradient(45deg, #dc143c 0%, #d4af37 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .team-member {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #dc143c 0%, #d4af37 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .map-placeholder {
+            height: 300px;
+            background: linear-gradient(45deg, #ffeaa7 0%, #fab1a0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: #dc143c;
+            font-size: 1.2rem;
+            border: 2px dashed #dc143c;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .price-tag {
+            background: #dc143c;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        
+        .moroccan-accent {
+            color: #dc143c;
+        }
+        
+        .gold-accent {
+            color: #d4af37;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-carousel {
+                height: 250px;
+            }
+            .carousel-item {
+                height: 250px;
+                font-size: 1.2rem;
+            }
+            .service-card {
+                height: 280px;
+                margin-bottom: 1rem;
+            }
+            .team-member {
+                width: 80px;
+                height: 80px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand moroccan-accent" href="#"><i class="fas fa-star-and-crescent me-2"></i>Atlas Aventures</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="d-none d-lg-flex">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Atlas & Sahara</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Circuits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Culture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn moroccan-accent" style="background-color: #dc143c; color: white;">
+                    <i class="fas fa-calendar-check me-2"></i>Réserver
+                </button>
+            </div>
+            
+            <!-- Mobile/Tablet Navigation -->
+            <div class="d-lg-none">
+                <span class="navbar-text me-3 moroccan-accent fw-bold">Voyages Maroc</span>
+                <button class="navbar-toggler" style="border-color: #dc143c;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Atlas & Sahara</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Circuits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Culture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel Section -->
+    <section class="hero-carousel">
+        <div id="mainCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active">
+                    <div class="w-100 h-100 d-flex align-items-center justify-content-center flex-column">
+                        <i class="fas fa-mountain fa-4x mb-3"></i>
+                        <h2 class="display-6 fw-bold">Haut Atlas Marocain</h2>
+                        <p class="lead">Découvrez le Toubkal et les villages berbères authentiques</p>
+                        <button class="btn btn-light btn-lg mt-3">Explorez l'Atlas</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="w-100 h-100 d-flex align-items-center justify-content-center flex-column">
+                        <i class="fas fa-sun fa-4x mb-3"></i>
+                        <h2 class="display-6 fw-bold">Désert du Sahara</h2>
+                        <p class="lead">Nuits magiques sous les étoiles à Merzouga et Zagora</p>
+                        <button class="btn btn-light btn-lg mt-3">Découvrir le désert</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="w-100 h-100 d-flex align-items-center justify-content-center flex-column">
+                        <i class="fas fa-mosque fa-4x mb-3"></i>
+                        <h2 class="display-6 fw-bold">Villes Impériales</h2>
+                        <p class="lead">Marrakech, Fès, Meknès et Rabat - patrimoine millénaire</p>
+                        <button class="btn btn-light btn-lg mt-3">Visiter les médinas</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="w-100 h-100 d-flex align-items-center justify-content-center flex-column">
+                        <i class="fas fa-water fa-4x mb-3"></i>
+                        <h2 class="display-6 fw-bold">Côtes Atlantiques</h2>
+                        <p class="lead">Essaouira, Agadir et les plages sauvages du Sud</p>
+                        <button class="btn btn-light btn-lg mt-3">Voir les côtes</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="display-5 fw-bold moroccan-accent mb-3">Nos Circuits Authentiques</h2>
+                    <p class="lead text-muted">Vivez le Maroc comme un local avec nos guides berbères</p>
+                </div>
+            </div>
+            
+            <!-- Desktop version -->
+            <div class="row d-none d-lg-flex">
+                <div class="col-lg-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-img-top">
+                            <i class="fas fa-hiking"></i>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title moroccan-accent fw-bold">Trek Atlas Berbère</h5>
+                            <p class="card-text flex-grow-1">Randonnées guidées dans le Haut Atlas avec nos guides berbères locaux. Découverte des villages traditionnels, cascade d'Ouzoud et ascension du Toubkal (4167m).</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="price-tag">Dès 450 DH/jour</span>
+                                    <small class="text-muted">
+                                        <i class="fas fa-star text-warning"></i> 4.9/5 (186 avis)
+                                    </small>
+                                </div>
+                                <button class="btn btn-outline-danger w-100">
+                                    <i class="fas fa-mountain me-2"></i>Voir les treks
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-img-top">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title moroccan-accent fw-bold">Expédition Saharienne</h5>
+                            <p class="card-text flex-grow-1">Immersion totale dans le désert du Sahara. Méharée traditionnelle, nuits en bivouac berbère et exploration des dunes de l'Erg Chebbi à dos de chameau.</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="price-tag">Dès 1200 DH/circuit</span>
+                                    <small class="text-muted">
+                                        <i class="fas fa-star text-warning"></i> 4.8/5 (94 avis)
+                                    </small>
+                                </div>
+                                <button class="btn btn-outline-danger w-100">
+                                    <i class="fas fa-moon me-2"></i>Nos bivouacs
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-img-top">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title moroccan-accent fw-bold">Culture & Médinas</h5>
+                            <p class="card-text flex-grow-1">Circuits culturels dans les villes impériales. Visite des médinas, souks, palais et rencontres avec les artisans traditionnels marocains.</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="price-tag">Dès 850 DH/circuit</span>
+                                    <small class="text-muted">
+                                        <i class="fas fa-star text-warning"></i> 4.7/5 (127 avis)
+                                    </small>
+                                </div>
+                                <button class="btn btn-outline-danger w-100">
+                                    <i class="fas fa-mosque me-2"></i>Voir les circuits
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tablet/Mobile version -->
+            <div class="d-lg-none">
+                <div class="row mb-4 align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="text-white d-flex align-items-center justify-content-center" style="height: 200px; border-radius: 15px; background: linear-gradient(45deg, #dc143c 0%, #d4af37 100%);">
+                            <div class="text-center">
+                                <i class="fas fa-hiking fa-4x mb-2"></i>
+                                <h6 class="fw-bold">Atlas & Sahara</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="moroccan-accent fw-bold">Découvrez le Maroc Authentique</h5>
+                        <p>Partez à l'aventure avec nos guides berbères locaux. Atlas, Sahara et médinas dans le respect des traditions ancestrales.</p>
+                        <div class="mb-3">
+                            <span class="price-tag me-2">Dès 450 DH</span>
+                            <small class="text-muted">
+                                <i class="fas fa-star text-warning"></i> 4.8/5
+                            </small>
+                        </div>
+                        <button class="btn moroccan-accent" style="background-color: #dc143c; color: white;">
+                            <i class="fas fa-mountain me-2"></i>Découvrir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section (Desktop only) -->
+    <section class="py-5 d-none d-lg-block">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h3 class="display-6 fw-bold moroccan-accent">Notre Équipe Marocaine</h3>
+                <p class="lead text-muted">Des guides passionnés qui vous feront découvrir leur pays depuis 2010</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <div class="team-member">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h5 class="fw-bold">Youssef Diouani</h5>
+                    <p class="moroccan-accent fw-semibold">Guide Principal & Fondateur</p>
+                    <small class="text-muted">CTO<br>
+                    <i class="fas fa-phone me-1"></i> youssefDiouani@atlasaventures.ma</small>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="team-member">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h5 class="fw-bold">Fatima Zahra El Mansouri</h5>
+                    <p class="moroccan-accent fw-semibold">Coordinatrice Culturelle</p>
+                    <small class="text-muted">Experte en patrimoine marocain<br>
+                    Diplômée en histoire de l'art islamique<br>
+                    <i class="fas fa-phone me-1"></i> fatima@atlasaventures.ma</small>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="team-member">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h5 class="fw-bold">Hassan Boutahar</h5>
+                    <p class="moroccan-accent fw-semibold">Guide du Désert</p>
+                    <small class="text-muted">Nomade du Sahara né à Merzouga<br>
+                    Expert en méharée traditionnelle<br>
+                    <i class="fas fa-phone me-1"></i> hassan@atlasaventures.ma</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Desktop layout -->
+                <div class="col-lg-6 d-none d-lg-block">
+                    <h4 class="moroccan-accent fw-bold mb-4">Planifiez votre voyage au Maroc</h4>
+                    <p class="text-muted mb-4">Contactez nos experts pour un circuit personnalisé aux traditions berbères</p>
+                    
+                    <div class="row mb-3">
+                        <div class="col-1">
+                            <i class="fas fa-map-marker-alt moroccan-accent fa-lg"></i>
+                        </div>
+                        <div class="col-11">
+                            <strong>Atlas Aventures Marrakech</strong><br>
+                            <span>Avenue Mohammed V, Guéliz<br>40000 Marrakech, Maroc</span>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-1">
+                            <i class="fas fa-phone moroccan-accent fa-lg"></i>
+                        </div>
+                        <div class="col-11">
+                            <strong>+212 524 43 77 89</strong><br>
+                            <small class="text-muted">Disponible 24h/24 pour les urgences</small>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-1">
+                            <i class="fas fa-envelope moroccan-accent fa-lg"></i>
+                        </div>
+                        <div class="col-11">
+                            <strong>contact@atlasaventures.ma</strong><br>
+                            <small class="text-muted">Réponse rapide en français, arabe et berbère</small>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-1">
+                            <i class="fas fa-clock moroccan-accent fa-lg"></i>
+                        </div>
+                        <div class="col-11">
+                            <strong>Horaires d'ouverture</strong><br>
+                            <span>Lun-Sam: 8h30-19h<br>Dimanche: 9h-17h</span>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <button class="btn moroccan-accent" style="background-color: #dc143c; color: white;">
+                            <i class="fas fa-calculator me-2"></i>Devis gratuit
+                        </button>
+                        <button class="btn btn-outline-danger">
+                            <i class="fas fa-download me-2"></i>Guide PDF
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile/Tablet layout -->
+                <div class="d-lg-none mb-4">
+                    <h5 class="moroccan-accent fw-bold">Trouvez-nous à Marrakech</h5>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="mb-2">
+                                <i class="fas fa-map-marker-alt me-2 moroccan-accent"></i>
+                                <small><strong>Marrakech - Guéliz</strong><br>Avenue Mohammed V</small>
+                            </div>
+                            <div class="mb-2">
+                                <i class="fas fa-phone me-2 moroccan-accent"></i>
+                                <small><strong>+212 524 43 77 89</strong></small>
+                            </div>
+                            <div class="mb-2">
+                                <i class="fas fa-envelope me-2 moroccan-accent"></i>
+                                <small><strong>contact@atlasaventures.ma</strong></small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-end">
+                                <i class="fas fa-star-and-crescent fa-3x moroccan-accent"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="col-lg-6">
+                    <div class="map-placeholder">
+                        <div class="text-center">
+                            <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                            <br>
+                            <strong>Notre agence à Marrakech</strong>
+                            <br>
+                            <small>En plein cœur de Guéliz, près de la médina</small>
+                            <br>
+                            <button class="btn btn-sm moroccan-accent mt-2" style="background-color: #dc143c; color: white;">
+                                <i class="fas fa-directions me-1"></i> Itinéraire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Mobile) -->
+    <footer class="py-4 d-lg-none" style="background-color: #dc143c; color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h6 class="fw-bold">
+                        <i class="fas fa-star-and-crescent me-2"></i>Atlas Aventures
+                    </h6>
+                    <small>Voyages authentiques depuis 2010</small>
+                    <br>
+                    <small class="opacity-75">Agence certifiée Tourisme Maroc</small>
+                </div>
+                <div class="col-6 text-end">
+                    <div class="mb-2">
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                    <small class="opacity-75">#MarocAuthentique</small>
+                </div>
+            </div>
+            <hr class="my-3 opacity-50">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <small class="opacity-75">© 2025 Atlas Aventures - Tous droits réservés - Marrakech, Maroc</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
